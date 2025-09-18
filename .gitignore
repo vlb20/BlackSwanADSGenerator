@@ -1,0 +1,16 @@
+causal_venv/
+corpus/
+FARS/
+vector_db/
+.env
+build_vector.log
+CausalRoadAccidentOntology_2_0.ttl
+converti_gerarchia.py
+converti_ttl.py
+fars_preprocessed.csv
+Ontology_expansion.py
+ontology_extension.log
+person.csv
+vehicle.csv
+
+
