@@ -1,0 +1,351 @@
+@prefix : <http://www.semanticweb.org/vince/ontologies/2025/8/untitled-ontology-3/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/vince/ontologies/2025/8/untitled-ontology-3/> .
+
+<https://w3id.org/CausalRoadAccidentOntology/1.0.0> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/vince/ontologies/2025/8/untitled-ontology-3/hasAntecedentEvent
+:hasAntecedentEvent rdf:type owl:ObjectProperty ;
+                    rdfs:domain :Causes ;
+                    rdfs:range <https://w3id.org/CausalRoadAccidentOntology#Event> .
+
+
+###  http://www.semanticweb.org/vince/ontologies/2025/8/untitled-ontology-3/hasCausalType
+:hasCausalType rdf:type owl:ObjectProperty ;
+               rdfs:domain :Causes ;
+               rdfs:range :CausalType .
+
+
+###  http://www.semanticweb.org/vince/ontologies/2025/8/untitled-ontology-3/hasEnablingCondition
+:hasEnablingCondition rdf:type owl:ObjectProperty ;
+                      rdfs:domain :Causes ;
+                      rdfs:range <https://w3id.org/CausalRoadAccidentOntology#EnvironmentCondition> .
+
+
+###  http://www.semanticweb.org/vince/ontologies/2025/8/untitled-ontology-3/hasMediator
+:hasMediator rdf:type owl:ObjectProperty ;
+             rdfs:domain :Causes ;
+             rdfs:range <https://w3id.org/CausalRoadAccidentOntology#Event> .
+
+
+###  http://www.semanticweb.org/vince/ontologies/2025/8/untitled-ontology-3/hasOutcome
+:hasOutcome rdf:type owl:ObjectProperty ;
+            rdfs:domain :Causes ;
+            rdfs:range <https://w3id.org/CausalRoadAccidentOntology#Event> .
+
+
+###  https://w3id.org/CausalRoadAccidentOntology#hadEnvironmentFactor
+<https://w3id.org/CausalRoadAccidentOntology#hadEnvironmentFactor> rdf:type owl:ObjectProperty ;
+                                                                   rdfs:subPropertyOf <https://w3id.org/CausalRoadAccidentOntology#hadFactor> ;
+                                                                   rdfs:domain <https://w3id.org/CausalRoadAccidentOntology#Road> ;
+                                                                   rdfs:range :EnvironmentFactorState .
+
+
+###  https://w3id.org/CausalRoadAccidentOntology#hadFactor
+<https://w3id.org/CausalRoadAccidentOntology#hadFactor> rdf:type owl:ObjectProperty ;
+                                                        rdfs:domain owl:Thing ;
+                                                        rdfs:range :FactorState .
+
+
+###  https://w3id.org/CausalRoadAccidentOntology#hadHumanFactor
+<https://w3id.org/CausalRoadAccidentOntology#hadHumanFactor> rdf:type owl:ObjectProperty ;
+                                                             rdfs:subPropertyOf <https://w3id.org/CausalRoadAccidentOntology#hadFactor> ;
+                                                             rdfs:domain <https://w3id.org/CausalRoadAccidentOntology#RoadUser> ;
+                                                             rdfs:range :HumanFactorState .
+
+
+###  https://w3id.org/CausalRoadAccidentOntology#hadLight
+<https://w3id.org/CausalRoadAccidentOntology#hadLight> rdf:type owl:ObjectProperty ;
+                                                       rdfs:subPropertyOf <https://w3id.org/CausalRoadAccidentOntology#occurredDuring> ;
+                                                       rdfs:domain <https://w3id.org/CausalRoadAccidentOntology#Crash> ;
+                                                       rdfs:range <https://w3id.org/CausalRoadAccidentOntology#LightCondition> .
+
+
+###  https://w3id.org/CausalRoadAccidentOntology#hadVehicleFactor
+<https://w3id.org/CausalRoadAccidentOntology#hadVehicleFactor> rdf:type owl:ObjectProperty ;
+                                                               rdfs:subPropertyOf <https://w3id.org/CausalRoadAccidentOntology#hadFactor> ;
+                                                               rdfs:domain <https://w3id.org/CausalRoadAccidentOntology#Vehicle> ;
+                                                               rdfs:range :VehicleFactorState .
+
+
+###  https://w3id.org/CausalRoadAccidentOntology#hadWeather
+<https://w3id.org/CausalRoadAccidentOntology#hadWeather> rdf:type owl:ObjectProperty ;
+                                                         rdfs:subPropertyOf <https://w3id.org/CausalRoadAccidentOntology#occurredDuring> ;
+                                                         rdfs:domain <https://w3id.org/CausalRoadAccidentOntology#Crash> ;
+                                                         rdfs:range <https://w3id.org/CausalRoadAccidentOntology#WeatherCondition> .
+
+
+###  https://w3id.org/CausalRoadAccidentOntology#hasContributingEvent
+<https://w3id.org/CausalRoadAccidentOntology#hasContributingEvent> rdf:type owl:ObjectProperty ;
+                                                                   rdfs:domain <https://w3id.org/CausalRoadAccidentOntology#Crash> ;
+                                                                   rdfs:range <https://w3id.org/CausalRoadAccidentOntology#Event> .
+
+
+###  https://w3id.org/CausalRoadAccidentOntology#involves
+<https://w3id.org/CausalRoadAccidentOntology#involves> rdf:type owl:ObjectProperty ;
+                                                       rdfs:domain <https://w3id.org/CausalRoadAccidentOntology#Event> ;
+                                                       rdfs:range owl:Thing .
+
+
+###  https://w3id.org/CausalRoadAccidentOntology#involvesRoadUser
+<https://w3id.org/CausalRoadAccidentOntology#involvesRoadUser> rdf:type owl:ObjectProperty ;
+                                                               rdfs:subPropertyOf <https://w3id.org/CausalRoadAccidentOntology#involves> ;
+                                                               rdfs:domain <https://w3id.org/CausalRoadAccidentOntology#Crash> ;
+                                                               rdfs:range <https://w3id.org/CausalRoadAccidentOntology#RoadUser> .
+
+
+###  https://w3id.org/CausalRoadAccidentOntology#involvesVehicle
+<https://w3id.org/CausalRoadAccidentOntology#involvesVehicle> rdf:type owl:ObjectProperty ;
+                                                              rdfs:subPropertyOf <https://w3id.org/CausalRoadAccidentOntology#involves> ;
+                                                              rdfs:domain <https://w3id.org/CausalRoadAccidentOntology#Crash> ;
+                                                              rdfs:range <https://w3id.org/CausalRoadAccidentOntology#Vehicle> .
+
+
+###  https://w3id.org/CausalRoadAccidentOntology#occurredDuring
+<https://w3id.org/CausalRoadAccidentOntology#occurredDuring> rdf:type owl:ObjectProperty ;
+                                                             rdfs:domain <https://w3id.org/CausalRoadAccidentOntology#Event> ;
+                                                             rdfs:range <https://w3id.org/CausalRoadAccidentOntology#EnvironmentCondition> .
+
+
+###  https://w3id.org/CausalRoadAccidentOntology#occurredOn
+<https://w3id.org/CausalRoadAccidentOntology#occurredOn> rdf:type owl:ObjectProperty ;
+                                                         rdfs:domain <https://w3id.org/CausalRoadAccidentOntology#Event> ;
+                                                         rdfs:range <https://w3id.org/CausalRoadAccidentOntology#Road> .
+
+
+###  https://w3id.org/CausalRoadAccidentOntology#precedes
+<https://w3id.org/CausalRoadAccidentOntology#precedes> rdf:type owl:ObjectProperty ;
+                                                       rdfs:domain <https://w3id.org/CausalRoadAccidentOntology#Event> ;
+                                                       rdfs:range <https://w3id.org/CausalRoadAccidentOntology#Event> .
+
+
+###  https://w3id.org/CausalRoadAccidentOntology#wasDriving
+<https://w3id.org/CausalRoadAccidentOntology#wasDriving> rdf:type owl:ObjectProperty ;
+                                                         rdfs:subPropertyOf <https://w3id.org/CausalRoadAccidentOntology#wasOccupantOf> ;
+                                                         rdfs:domain <https://w3id.org/CausalRoadAccidentOntology#Driver> ;
+                                                         rdfs:range <https://w3id.org/CausalRoadAccidentOntology#Vehicle> .
+
+
+###  https://w3id.org/CausalRoadAccidentOntology#wasOccupantOf
+<https://w3id.org/CausalRoadAccidentOntology#wasOccupantOf> rdf:type owl:ObjectProperty ;
+                                                            rdfs:domain <https://w3id.org/CausalRoadAccidentOntology#RoadUser> ;
+                                                            rdfs:range <https://w3id.org/CausalRoadAccidentOntology#Vehicle> .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/vince/ontologies/2025/8/untitled-ontology-3/areDrugsInvolved
+:areDrugsInvolved rdf:type owl:DatatypeProperty ;
+                  rdfs:domain <https://w3id.org/CausalRoadAccidentOntology#Driver> ;
+                  rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/vince/ontologies/2025/8/untitled-ontology-3/hasAge
+:hasAge rdf:type owl:DatatypeProperty ;
+        rdfs:domain <https://w3id.org/CausalRoadAccidentOntology#RoadUser> ;
+        rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/vince/ontologies/2025/8/untitled-ontology-3/hasCaseID
+:hasCaseID rdf:type owl:DatatypeProperty ;
+           rdfs:domain <https://w3id.org/CausalRoadAccidentOntology#Crash> ;
+           rdfs:range xsd:double .
+
+
+###  http://www.semanticweb.org/vince/ontologies/2025/8/untitled-ontology-3/hasDateTime
+:hasDateTime rdf:type owl:DatatypeProperty ;
+             rdfs:domain <https://w3id.org/CausalRoadAccidentOntology#Crash> ;
+             rdfs:range xsd:dateTime .
+
+
+###  http://www.semanticweb.org/vince/ontologies/2025/8/untitled-ontology-3/hasEffectWeight
+:hasEffectWeight rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Causes ;
+                 rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/vince/ontologies/2025/8/untitled-ontology-3/hasModelYear
+:hasModelYear rdf:type owl:DatatypeProperty ;
+              rdfs:domain <https://w3id.org/CausalRoadAccidentOntology#Vehicle> ;
+              rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/vince/ontologies/2025/8/untitled-ontology-3/hasNumberOfFatalities
+:hasNumberOfFatalities rdf:type owl:DatatypeProperty ;
+                       rdfs:domain <https://w3id.org/CausalRoadAccidentOntology#Crash> ;
+                       rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/vince/ontologies/2025/8/untitled-ontology-3/isAlcoholInvolved
+:isAlcoholInvolved rdf:type owl:DatatypeProperty ;
+                   rdfs:domain <https://w3id.org/CausalRoadAccidentOntology#Driver> ;
+                   rdfs:range xsd:boolean .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/vince/ontologies/2025/8/untitled-ontology-3/CausalType
+:CausalType rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/vince/ontologies/2025/8/untitled-ontology-3/Causes
+:Causes rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/vince/ontologies/2025/8/untitled-ontology-3/EnvironmentFactorEvent
+:EnvironmentFactorEvent rdf:type owl:Class ;
+                        rdfs:subClassOf <https://w3id.org/CausalRoadAccidentOntology#Event> .
+
+
+###  http://www.semanticweb.org/vince/ontologies/2025/8/untitled-ontology-3/EnvironmentFactorState
+:EnvironmentFactorState rdf:type owl:Class ;
+                        rdfs:subClassOf :FactorState .
+
+
+###  http://www.semanticweb.org/vince/ontologies/2025/8/untitled-ontology-3/FactorState
+:FactorState rdf:type owl:Class ;
+             rdfs:subClassOf :Condition .
+
+
+###  http://www.semanticweb.org/vince/ontologies/2025/8/untitled-ontology-3/HumanFactorEvent
+:HumanFactorEvent rdf:type owl:Class ;
+                  rdfs:subClassOf <https://w3id.org/CausalRoadAccidentOntology#Event> .
+
+
+###  http://www.semanticweb.org/vince/ontologies/2025/8/untitled-ontology-3/HumanFactorState
+:HumanFactorState rdf:type owl:Class ;
+                  rdfs:subClassOf :FactorState .
+
+
+###  http://www.semanticweb.org/vince/ontologies/2025/8/untitled-ontology-3/VehicleFactorEvent
+:VehicleFactorEvent rdf:type owl:Class ;
+                    rdfs:subClassOf <https://w3id.org/CausalRoadAccidentOntology#Event> .
+
+
+###  http://www.semanticweb.org/vince/ontologies/2025/8/untitled-ontology-3/VehicleFactorState
+:VehicleFactorState rdf:type owl:Class ;
+                    rdfs:subClassOf :FactorState .
+
+
+###  https://w3id.org/CausalRoadAccidentOntology#Crash
+<https://w3id.org/CausalRoadAccidentOntology#Crash> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <https://w3id.org/CausalRoadAccidentOntology#Event> .
+
+
+###  https://w3id.org/CausalRoadAccidentOntology#Cyclist
+<https://w3id.org/CausalRoadAccidentOntology#Cyclist> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <https://w3id.org/CausalRoadAccidentOntology#RoadUser> .
+
+
+###  https://w3id.org/CausalRoadAccidentOntology#Driver
+<https://w3id.org/CausalRoadAccidentOntology#Driver> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <https://w3id.org/CausalRoadAccidentOntology#RoadUser> .
+
+
+###  https://w3id.org/CausalRoadAccidentOntology#EnvironmentCondition
+<https://w3id.org/CausalRoadAccidentOntology#EnvironmentCondition> rdf:type owl:Class ;
+                                                                   rdfs:subClassOf :Condition .
+
+
+###  https://w3id.org/CausalRoadAccidentOntology#Event
+<https://w3id.org/CausalRoadAccidentOntology#Event> rdf:type owl:Class .
+
+
+###  https://w3id.org/CausalRoadAccidentOntology#LightCondition
+<https://w3id.org/CausalRoadAccidentOntology#LightCondition> rdf:type owl:Class ;
+                                                             rdfs:subClassOf <https://w3id.org/CausalRoadAccidentOntology#EnvironmentCondition> .
+
+
+###  https://w3id.org/CausalRoadAccidentOntology#MotorVehicle
+<https://w3id.org/CausalRoadAccidentOntology#MotorVehicle> rdf:type owl:Class ;
+                                                           rdfs:subClassOf <https://w3id.org/CausalRoadAccidentOntology#Vehicle> .
+
+
+###  https://w3id.org/CausalRoadAccidentOntology#NonMotorVehicle
+<https://w3id.org/CausalRoadAccidentOntology#NonMotorVehicle> rdf:type owl:Class ;
+                                                              rdfs:subClassOf <https://w3id.org/CausalRoadAccidentOntology#Vehicle> .
+
+
+###  https://w3id.org/CausalRoadAccidentOntology#Passenger
+<https://w3id.org/CausalRoadAccidentOntology#Passenger> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <https://w3id.org/CausalRoadAccidentOntology#RoadUser> .
+
+
+###  https://w3id.org/CausalRoadAccidentOntology#Pedestrian
+<https://w3id.org/CausalRoadAccidentOntology#Pedestrian> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <https://w3id.org/CausalRoadAccidentOntology#RoadUser> .
+
+
+###  https://w3id.org/CausalRoadAccidentOntology#Road
+<https://w3id.org/CausalRoadAccidentOntology#Road> rdf:type owl:Class .
+
+
+###  https://w3id.org/CausalRoadAccidentOntology#RoadUser
+<https://w3id.org/CausalRoadAccidentOntology#RoadUser> rdf:type owl:Class .
+
+
+###  https://w3id.org/CausalRoadAccidentOntology#Vehicle
+<https://w3id.org/CausalRoadAccidentOntology#Vehicle> rdf:type owl:Class .
+
+
+###  https://w3id.org/CausalRoadAccidentOntology#WeatherCondition
+<https://w3id.org/CausalRoadAccidentOntology#WeatherCondition> rdf:type owl:Class ;
+                                                               rdfs:subClassOf <https://w3id.org/CausalRoadAccidentOntology#EnvironmentCondition> .
+
+
+###  https://w3id.org/CausalRoadAccidentOntology/1.0.0#Condition
+:Condition rdf:type owl:Class .
+
+
+###  https://w3id.org/CausalRoadAccidentOntology/1.0.0#HeavyVehicle
+:HeavyVehicle rdf:type owl:Class ;
+              rdfs:subClassOf <https://w3id.org/CausalRoadAccidentOntology#MotorVehicle> .
+
+
+###  https://w3id.org/CausalRoadAccidentOntology/1.0.0#LightVehicle
+:LightVehicle rdf:type owl:Class ;
+              rdfs:subClassOf <https://w3id.org/CausalRoadAccidentOntology#MotorVehicle> .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/vince/ontologies/2025/8/untitled-ontology-3/ContributoryCause
+:ContributoryCause rdf:type owl:NamedIndividual ,
+                            :CausalType .
+
+
+###  http://www.semanticweb.org/vince/ontologies/2025/8/untitled-ontology-3/InterveningCause
+:InterveningCause rdf:type owl:NamedIndividual ,
+                           :CausalType .
+
+
+###  http://www.semanticweb.org/vince/ontologies/2025/8/untitled-ontology-3/NecessaryCause
+:NecessaryCause rdf:type owl:NamedIndividual ,
+                         :CausalType .
+
+
+###  http://www.semanticweb.org/vince/ontologies/2025/8/untitled-ontology-3/PrimaryCause
+:PrimaryCause rdf:type owl:NamedIndividual ,
+                       :CausalType .
+
+
+###  http://www.semanticweb.org/vince/ontologies/2025/8/untitled-ontology-3/ProximateCause
+:ProximateCause rdf:type owl:NamedIndividual ,
+                         :CausalType .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
